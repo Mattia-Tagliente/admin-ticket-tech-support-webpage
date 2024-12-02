@@ -10,14 +10,14 @@ session_start();
 if (!isset($_SESSION['admin'])) {
     // If admin is not set, redirect to login.php with an alert
     echo "<script>
-        alert('You are not logged in. Redirecting to the login page.');
+        alert('Non sei loggato!.');
         window.location.href = 'login.php';
     </script>";
     exit;
 } else {
     // If admin is set, redirect to home.php with an alert
     echo "<script>
-        alert('Welcome back! Redirecting to the home page.');
+        alert('Bentornato!.');
         window.location.href = 'home.php';
     </script>";
     exit;

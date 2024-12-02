@@ -4,7 +4,7 @@
     <?php include ('./Widgets/head.php');
 
     if (!isset($_SESSION['admin'])) { 
-            echo "<script>alert('You do not have permission to visit this page.'); 
+            echo "<script>alert('Non hai i permessi necessari per visitare questa pagina.'); 
             window.location.href = 'login.php';</script>"; 
             exit; 
         }

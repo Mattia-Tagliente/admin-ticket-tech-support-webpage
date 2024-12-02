@@ -29,9 +29,9 @@ if (curl_errno($curl)) {
             echo '<table border="1" cellpadding="10" cellspacing="0">';
             echo '<thead>';
             echo '<tr>';
-            echo '<th>Select</th>';
-            echo '<th>Company Name</th>';
-            echo '<th>VAT Number</th>';
+            echo '<th>Seleziona</th>';
+            echo '<th>Denominazione sociale</th>';
+            echo '<th>Partita Iva</th>';
             echo '</tr>';
             echo '</thead>';
             echo '<tbody>';
@@ -50,7 +50,7 @@ if (curl_errno($curl)) {
             echo '</table>';
             echo '</form>';
         } else {
-            echo "No customers found.";
+            echo "Nessun cliente trovato.";
         }
     } 
 

@@ -2,7 +2,7 @@
 
 // Check if 'vat' parameter is set in the URL
 if (!isset($_GET['vat']) || $_GET['vat'] == "") {
-    echo "<p>Error: VAT number is missing.</p><br>";
+    echo "<p>Errore: partita IVA non trovata.</p><br>";
 } else {
     // Include the necessary functions
     include("./Functions/GetCurrentTicketStatus.php");
@@ -47,10 +47,10 @@ if (!isset($_GET['vat']) || $_GET['vat'] == "") {
         echo "<table border='1'>";
         echo "<thead>
                 <tr>
-                    <th>Ticket Code</th>
-                    <th>Ticket Name</th>
-                    <th>Current Status</th>
-                    <th>Select</th>
+                    <th>Codice del ticket</th>
+                    <th>Titolo del ticket</th>
+                    <th>Status attuale</th>
+                    <th>Seleziona</th>
                 </tr>
             </thead><tbody>";
 
@@ -73,10 +73,10 @@ if (!isset($_GET['vat']) || $_GET['vat'] == "") {
 
     } elseif ($httpStatusCode === 404) {
         // If the status is NOT_FOUND (404), print a message saying no tickets were found
-        echo "<p>No tickets found for the given VAT number.</p>";
+        echo "<p>Nessun ticket trovato per la Partita Iva fornita.</p>";
     } else {
         // Handle other HTTP status codes (error handling)
-        echo "<p>Unexpected error occurred. Please try again later.</p>";
+        echo "<p>Errore imprevisto: riprovare più tardi.</p>";
     }
 }
 

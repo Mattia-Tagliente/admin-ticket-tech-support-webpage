@@ -40,10 +40,11 @@
         echo "<table border='1'>";
         echo "<thead>
                 <tr>
-                    <th>Ticket Code</th>
-                    <th>Ticket Name</th>
-                    <th>Current Status</th>
-                    <th>Select</th>
+                    <th>Cliente</th>
+                    <th>Codice del ticket</th>
+                    <th>Titolo del ticket</th>
+                    <th>Status attuale</th>
+                    <th>Seleziona</th>
                 </tr>
             </thead><tbody>";
 
@@ -53,6 +54,7 @@
             $currentStatus = calculateStatus($ticket['ticketStatus']);  // Call your function to calculate the current status
 
             echo "<tr>";
+            echo "<td>{$ticket['customerName']}</td>";
             echo "<td>{$ticket['ticketCode']}</td>";
             echo "<td>{$ticket['ticketName']}</td>";
             echo "<td>{$currentStatus}</td>";
@@ -66,7 +68,7 @@
 
     } elseif ($httpStatusCode === 404) {
         // If the status is NOT_FOUND (404), print a message saying no tickets were found
-        echo "<p>Non ci ancora biglietti.</p>";
+        echo "<p>Non ci ancora ticket.</p>";
     } else {
         // Handle other HTTP status codes (error handling)
         echo "<p>Errore imprevisto, riprovare più tardi.</p>";

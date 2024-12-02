@@ -3,7 +3,7 @@ include('../Widgets/head.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_POST['usernameOrEmail']) || !isset($_POST['password'])) {
-        echo "<script>alert('Missing credentials. Please fill in both fields.'); window.location.href = '../login.php';</script>";
+        echo "<script>alert('Una o più credenziali mancanti.'); window.location.href = '../login.php';</script>";
         exit;
     }
 
@@ -33,13 +33,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Handle the response
     if ($httpCode === 401) { // Unauthorized
-        echo "<script>alert('Invalid credentials. Please try again.'); window.location.href = 'login.php';</script>";
+        echo "<script>alert('Credenziali non valide.'); window.location.href = 'login.php';</script>";
         exit;
     } elseif ($httpCode === 200) { // OK
         $userData = json_decode($response, true);
 
         if ($userData['adminStatus'] === 0) { // User is not authorized
-            echo "<script>alert('User is not authorized to access this area.'); window.location.href = 'login.php';</script>";
+            echo "<script>alert('L'utente non è autorizzato in quest'area'); window.location.href = 'login.php';</script>";
             exit;
         }
 
@@ -48,10 +48,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         exit;
     } else { // Other errors
-        echo "<script>alert('An unexpected error occurred. Please try again later.'); window.location.href = '../login.php';</script>";
+        echo "<script>alert('Errore imprevisto: riprovare più tardi.'); window.location.href = '../login.php';</script>";
         exit;
     }
 } else {
-    echo "<script>alert('Invalid request method.'); window.location.href = '../login.php';</script>";
+    echo "<script>alert('Metodo della richiesta non valido.'); window.location.href = '../login.php';</script>";
     exit;
 }

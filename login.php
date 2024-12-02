@@ -7,7 +7,7 @@
     <form action="./Api/authenticateUser.php" method="POST">
         <h2>Login</h2>
 
-        <label for="usernameOrEmail">Username or Email:</label><br>
+        <label for="usernameOrEmail">Username o Email:</label><br>
         <input type="text" id="usernameOrEmail" name="usernameOrEmail" required><br><br>
 
         <label for="password">Password:</label><br>

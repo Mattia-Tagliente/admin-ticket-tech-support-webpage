@@ -43,6 +43,6 @@ if (isset($data['companyName']) && isset($data['vatNumber'])) {
     <p>{$data['vatNumber']}</p><br><br>";
 } else {
     // Handle case where data is not found or invalid
-    echo "<p>Customer not found or invalid response from server.</p>";
+    echo "<p>Cliente non trovato o risposta non valida del server.</p>";
 }
 ?>

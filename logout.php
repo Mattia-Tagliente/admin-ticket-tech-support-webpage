@@ -1,5 +1,5 @@
 <?php
 include('./Widgets/head.php');
 session_destroy();
-header('login.php');
+echo "<script>alert('Hai effettuato il logout, arrivederci!.'); window.location.href = 'login.php';</script>";
 ?>

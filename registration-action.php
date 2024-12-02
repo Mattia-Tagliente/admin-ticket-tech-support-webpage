@@ -15,9 +15,9 @@ $requiredFields = [
 ];
 
 foreach ($requiredFields as $field) {
-    if (!isset($_POST[$field]) || ($_POST[$field]) !== '') {
+    if (!isset($_POST[$field]) || ($_POST[$field]) == '') {
         // Alert user and redirect to error page if any required field is missing or empty
-        echo "<script>alert('Error: Missing or invalid form data. Please complete all required fields.'); window.location.href = 'customer-details.php';</script>";
+        echo "<script>alert('Error: uno o più campi non compilati.'); window.location.href = 'customer-tickets.php?vat=$customerVat';</script>";
         exit;
     }
 }
@@ -74,13 +74,13 @@ curl_close($ch);
 
 // Handle the response
 if ($httpCode === 201) { // 201 Created
-    echo "<script>alert('Registration successful!'); window.location.href = 'index.php';</script>";
+    echo "<script>alert('Registrazione effettuata con successo!'); window.location.href = 'customer-tickets.php?vat=$customerVat';</script>";
     exit;
 } elseif ($httpCode === 401) { // 401 Unauthorized
-    echo "<script>alert('Registration failed: Email, username already in use, or customer does not exist.'); window.location.href = 'registration.php';</script>";
+    echo "<script>alert('Registrazione fallita: email o username già in uso, oppure il cliente non è riconosciuto.'); window.location.href = 'registration.php?vat=$customerVat';</script>";
     exit;
 } else { // Other HTTP responses
-    echo "<script>alert('An unexpected error occurred. Please try again later.'); window.location.href = 'registration.php';</script>";
+    echo "<script>alert('Errore imprevisto, riprovare più tardi.'); window.location.href = 'registration.php?vat=$customerVat';</script>";
     exit;
 }
 ?>

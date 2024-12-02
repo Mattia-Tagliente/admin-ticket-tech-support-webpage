@@ -2,7 +2,7 @@
 function calculateStatus($ticketStatuses) {
     // Check if ticketStatuses array is empty
     if (empty($ticketStatuses)) {
-        return "No Status"; // or you can return a default value like "Pending"
+        return "no-status"; // or you can return a default value like "Pending"
     }
 
     // Initialize a variable to track the most recent status

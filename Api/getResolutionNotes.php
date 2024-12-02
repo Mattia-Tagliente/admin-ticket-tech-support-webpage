@@ -4,7 +4,7 @@ if (isset($_GET['ticketCode']) && !empty($_GET['ticketCode'])) {
     $ticketCode = $_GET['ticketCode'];
 
     // Define the URL for the API endpoint
-    $url = "http://localhost:8080/api/v1/app/resolution/$ticketCode"; // Replace with the actual API endpoint URL
+    $url = "http://localhost:8080/api/v1/app/ticket/resolution/$ticketCode"; // Replace with the actual API endpoint URL
 
     // Initialize cURL session
     $ch = curl_init();
@@ -43,7 +43,7 @@ if (isset($_GET['ticketCode']) && !empty($_GET['ticketCode'])) {
                     <tr>
                         <th>Data</th>
                         <th>Nota</th>
-                        <th>Nome e cognome dell'autore</th>
+                        <th>Autore</th>
                         <th>Email dell'autore</th>
                     </tr>
                 </thead><tbody>";
